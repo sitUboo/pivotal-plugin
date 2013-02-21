@@ -126,7 +126,6 @@ public class Pivotal {
                 Element node = (Element) list.get(i);
                 projects.add(node.getChildText("id"));
             }
-            LOGGER.log(Level.SEVERE,"Building projects complete.");
         } catch (JDOMException jde) {
             LOGGER.log(Level.SEVERE,jde.getMessage());
         } catch (IOException ex) {
