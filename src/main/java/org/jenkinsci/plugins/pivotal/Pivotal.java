@@ -61,7 +61,7 @@ public class Pivotal {
         java.io.BufferedReader br = new java.io.BufferedReader(new java.io.InputStreamReader(rstream));
         String line;
         while ((line = br.readLine()) != null) {
-            LOGGER.log(Level.INFO, line);
+            LOGGER.log(Level.FINE, line);
         }
         br.close();
     }
