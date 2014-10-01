@@ -29,7 +29,7 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 /**
- * A plugin to parse the git logs for pivotal tickets and assuming a
+ * Start of a plugin to parse the git logs for pivotal tickets and assuming a
  * successful build, update pivotal with the build# User: stevendeal Date:
  * 2/13/13 Time: 12:51 PM
  */
@@ -62,15 +62,10 @@ public class PivotalPublisher extends Recorder {
             Set<String> ids = findStoryIdsRecursive(build, STORIE_PATTERN, listener);
 
             if (ids.isEmpty()) {
-                LOGGER.log(Level.FINE, Messages.PivotalPublisher_NoStories());
+                listener.getLogger().println(Messages.PivotalPublisher_NoStories());
                 return true;
             } else {
-                if(getDescriptor().getAuthToken().equalsIgnoreCase("")){
-                    LOGGER.log(Level.SEVERE, "Error, no pivotal authorization token set, unable to proceed.");
-                    throw new Exception("Pivotal Plugin configuration error. Set auth token.");
-                }else{
-                    pivotal = new Pivotal(getDescriptor().getAuthToken());
-                }
+                pivotal = new Pivotal(getDescriptor().getAuthToken());
             }
 
             boolean doUpdate = build.getResult().isBetterOrEqualTo(Result.UNSTABLE);
@@ -218,6 +213,7 @@ public class PivotalPublisher extends Recorder {
         }
 
         public String getAuthToken(){
+            System.out.println("Auth Token " + authToken);
             return authToken;
         }
     }
