@@ -8,6 +8,6 @@ def mvn(String goals) {
 }
 
 node(""){
-    git git@github.com:sitUboo/pivotal-plugin.git
+    git 'git@github.com:sitUboo/pivotal-plugin.git'
     mvn "clean verify"
 }
