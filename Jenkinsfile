@@ -9,6 +9,6 @@ def mvn(String goals) {
 
 node(""){
     git 'git@github.com:sitUboo/pivotal-plugin.git'
-    echo scm.branches[0].name
+    echo env.BRANCH_NAME
     mvn "clean verify"
 }
