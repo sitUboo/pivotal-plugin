@@ -17,7 +17,7 @@ stage("build"){
 
 stage("test"){
     node(""){
-        git 'git@github.com:sitUboo/Yui.git'
+        git 'https://github.com/sitUboo/Yui'
         sh("ls")
     }
 }
