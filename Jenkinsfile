@@ -7,8 +7,10 @@ def mvn(String goals) {
     }
 }
 
-node(""){
-    git 'git@github.com:sitUboo/pivotal-plugin.git'
-    echo env.BRANCH_NAME
-    mvn "clean verify"
+stage("build"){
+    node(""){
+        git 'git@github.com:sitUboo/pivotal-plugin.git'
+        echo env.BRANCH_NAME
+        mvn "clean verify"
+    }
 }
