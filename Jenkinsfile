@@ -14,3 +14,10 @@ stage("build"){
         mvn "clean verify"
     }
 }
+
+stage("test"){
+    node(""){
+        git 'git@github.com:sitUboo/Yui.git'
+        sh("ls")
+    }
+}
