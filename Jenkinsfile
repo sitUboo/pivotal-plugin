@@ -12,6 +12,7 @@ stage("build"){
         git 'git@github.com:sitUboo/pivotal-plugin.git'
         echo env.BRANCH_NAME
         mvn "clean verify"
+        sh "ls;exit"
     }
 }
 
