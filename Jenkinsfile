@@ -17,8 +17,38 @@ stage("build"){
 }
 
 stage("test"){
-    node(""){
-        git 'https://github.com/sitUboo/Yui'
-        sh("ls")
-    }
+  node {
+   parallel (
+     phase1: { 
+         //sh "echo p1; sleep 20s; echo phase1"
+         readUrl
+         readUrl('http://www.cnn.com')
+         readUrl('http://www.google.com')
+     },
+     phase2: { 
+         //sh "echo p2; sleep 40s; echo phase2" 
+         readUrl('http://www.google.com')
+         readUrl('http://www.cnn.com')
+         readUrl
+     },
+     phase3: { 
+         //sh "echo p1; sleep 20s; echo phase1"
+         try {
+           readUrl
+         } catch(err) {
+             echo 'Something bad happened'
+             echo err.toString()
+         }
+         readUrl('http://www.cnn.com')
+         readUrl('http://www.google.com')
+     },
+     phase4: { 
+         //sh "echo p2; sleep 40s; echo phase2" 
+         readUrl('http://www.google.com')
+         readUrl('http://www.cnn.com')
+         readUrl
+     }
+   )
+  sh "echo run this after both phases complete"   
+ }
 }
