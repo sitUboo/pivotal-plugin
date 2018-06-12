@@ -1,5 +1,5 @@
 <!--
-  This view is used to render the installed plugins page.
+  This view is used to render the installed plugins page..
 -->
 <div>
     This plugin integrates Jenkins to <a href="http://www.pivotaltracker.com">Pivotal</a>.
