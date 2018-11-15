@@ -1,4 +1,4 @@
 pivotal-plugin
 ===============
 
-Jhttps://go.cloudbees.com/docs/cloudbees-core/cloud-admin-guide/cross-https://go.cloudbees.com/docs/cloudbees-core/cloud-admin-guide/cross-team-collaboration/#cross-team-event-triggers-collaboration/#cross-team-event-triggers
+Jenkins plugin to post a build note back to pivotal. Modeled off the Jira Jenkins plugin and now used for webhook testing.
