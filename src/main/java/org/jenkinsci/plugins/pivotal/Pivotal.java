@@ -76,7 +76,7 @@ public class Pivotal {
         try {
             client.executeMethod(get);
         } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "Error fetching Pivotal projects/stories. Updating Pivotal will not be possible.\n");
+            LOGGER.log(Level.SEVERE, "Error fetching Pivotal projects/stories. Updating Pivotal will not be possible!\n");
             LOGGER.log(Level.SEVERE, "Exception: {0}", e);
         }
 
