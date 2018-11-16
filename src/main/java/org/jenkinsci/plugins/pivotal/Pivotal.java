@@ -18,6 +18,7 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 /**
+ * This poor plugin is now just used to trigger jobs from github
  *
  * @author stevendeal
  */
