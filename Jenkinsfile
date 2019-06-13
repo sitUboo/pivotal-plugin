@@ -19,6 +19,7 @@ pipeline {
         }
         steps {
           container('maven') {
+            sh "echo Our branch is ${env.BRANCH_NAME}"
             sh "mvn versions:set -DnewVersion=$PREVIEW_VERSION"
             sh "mvn install"
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
