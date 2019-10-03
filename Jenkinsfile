@@ -1,3 +1,4 @@
+properties([pipelineTriggers([githubPush()])])
 node {
    echo 'Hello World'
    checkout([$class: 'GitSCM',
