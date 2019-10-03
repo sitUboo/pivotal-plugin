@@ -7,7 +7,7 @@ node {
                           [$class: 'UserExclusion', excludedUsers: 'noreply']
                          ],
              submoduleCfg: [],
-             userRemoteConfigs: [[url: 'git@github.com:sitUboo/Pivotal-plugin.git']]
+             userRemoteConfigs: [[url: 'git@github.com:sitUboo/pivotal-plugin.git']]
             ])
    sh "ls"
 }
