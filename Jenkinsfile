@@ -1,5 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 node {
+   scm
    echo 'Hello World'
    echo "Git Branch ${env.BRANCH_NAME}"
    echo "Git Url ${env.GIT_URL}"
