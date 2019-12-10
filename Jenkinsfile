@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'ls;scm' 
+                sh 'ls;env' 
             }
         }
     }
