@@ -14,5 +14,5 @@ node {
    //          submoduleCfg: [],
    //          userRemoteConfigs: [[url: 'git@github.com:sitUboo/pivotal-plugin.git']]
    //         ])
-   sh "ls"
+   sh "ls;env"
 }
