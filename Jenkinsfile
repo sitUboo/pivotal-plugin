@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'ls;env' 
+                sh 'ls;env;touch test.txt' 
+                archiveArtifacts 'test.txt'
             }
         }
     }
