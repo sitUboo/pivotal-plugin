@@ -22,15 +22,15 @@ pipeline {
             sh 'echo failed'    
           }          
         }
-   //      success {
-  //        deleteDir()
-  //       }   
+         success {
+          deleteDir()
+         }   
       }
     }
       
     stage('Unit Tests'){
       agent {
-        label 'remote'
+        label 'mothership'
       }
       steps{
         script{
