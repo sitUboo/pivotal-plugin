@@ -22,9 +22,9 @@ pipeline {
             sh 'echo failed'    
           }          
         }
-         success {
-          deleteDir()
-         }   
+   //      success {
+  //        deleteDir()
+  //       }   
       }
     }
       
